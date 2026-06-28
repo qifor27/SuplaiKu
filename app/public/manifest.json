@@ -1,6 +1,6 @@
 {
-  "name": "siHutang - Manajemen Hutang Supplier",
-  "short_name": "siHutang",
+  "name": "suplaiKu - Manajemen Hutang Supplier",
+  "short_name": "suplaiKu",
   "description": "Kelola hutang supplier toko Anda dengan mudah",
   "start_url": "/dashboard",
   "display": "standalone",

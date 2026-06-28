@@ -22,14 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'siHutang — Manajemen Hutang Supplier',
+  title: 'suplaiKu — Manajemen Hutang Supplier',
   description:
     'Kelola hutang supplier toko Anda dengan mudah. Catat pembelian, pembayaran, dan pantau saldo hutang secara real-time.',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'siHutang',
+    title: 'suplaiKu',
   },
   other: {
     'mobile-web-app-capable': 'yes',

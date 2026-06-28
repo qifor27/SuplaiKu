@@ -147,7 +147,7 @@ export default function LoginPage() {
         {/* Brand Header */}
         <div className={styles.brandHeader}>
           <div className={styles.brandIcon}>📊</div>
-          <h1 className={styles.brandTitle}>siHutang</h1>
+          <h1 className={styles.brandTitle}>suplaiKu</h1>
           <p className={styles.brandSubtitle}>
             Manajemen Hutang Supplier
           </p>
