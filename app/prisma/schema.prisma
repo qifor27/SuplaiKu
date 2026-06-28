@@ -1,0 +1,88 @@
+// ECC prisma-patterns: cuid IDs, proper indexes, Decimal for money,
+// composite indexes for report queries
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// Auth
+// ============================================
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  pin       String   // bcrypt hashed 4-6 digit PIN
+  role      Role     @default(EMPLOYEE)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([role])
+}
+
+enum Role {
+  OWNER    // Full access: CRUD all, view reports, delete data
+  EMPLOYEE // Limited: add transactions, view suppliers, NO delete
+}
+
+// ============================================
+// Business Data
+// ============================================
+
+model Supplier {
+  id           String        @id @default(cuid())
+  name         String
+  phone        String?
+  address      String?
+  notes        String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  items        Item[]
+  transactions Transaction[]
+
+  @@index([name])
+  @@index([createdAt])
+}
+
+model Item {
+  id           String        @id @default(cuid())
+  name         String
+  unit         String
+  pricePerUnit Decimal       @db.Decimal(15, 2)
+  supplierId   String
+  supplier     Supplier      @relation(fields: [supplierId], references: [id], onDelete: Cascade)
+  transactions Transaction[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([supplierId])
+}
+
+model Transaction {
+  id          String          @id @default(cuid())
+  type        TransactionType
+  amount      Decimal         @db.Decimal(15, 2)
+  quantity    Int?
+  description String?
+  method      String?
+  date        DateTime        @default(now())
+  supplierId  String
+  supplier    Supplier        @relation(fields: [supplierId], references: [id], onDelete: Cascade)
+  itemId      String?
+  item        Item?           @relation(fields: [itemId], references: [id], onDelete: SetNull)
+  createdAt   DateTime        @default(now())
+
+  @@index([supplierId])
+  @@index([date])
+  @@index([type])
+  @@index([supplierId, date]) // composite for per-supplier-per-period reports
+}
+
+enum TransactionType {
+  PURCHASE // Buying goods -> debt increases
+  PAYMENT  // Paying installment -> debt decreases
+}

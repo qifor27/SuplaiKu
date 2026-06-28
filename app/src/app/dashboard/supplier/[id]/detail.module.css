@@ -1,0 +1,356 @@
+.pageContainer {
+  padding: var(--space-4);
+  animation: fadeIn var(--transition-normal) ease forwards;
+}
+
+/* Balance card */
+.balanceCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: var(--space-6);
+}
+
+.balanceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-4);
+}
+
+.balanceLabel {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.balanceValue {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+}
+
+.debt { color: var(--accent-danger); }
+.clear { color: var(--accent-success); }
+
+.balanceBreakdown {
+  display: flex;
+  border-top: 1px solid var(--border-color);
+}
+
+.breakdownItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3);
+}
+
+.breakdownLabel {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.breakdownValue {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+.paymentValue { color: var(--accent-success); }
+
+.breakdownDivider {
+  width: 1px;
+  background: var(--border-color);
+}
+
+/* Sections */
+.section {
+  margin-bottom: var(--space-6);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.sectionTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-3);
+}
+
+/* Info card */
+.infoCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.infoRow:last-child { border-bottom: none; }
+
+.infoLabel {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.infoValue {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+}
+
+/* Items list */
+.itemsList {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.itemRow:last-child { border-bottom: none; }
+
+.itemName {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+}
+
+.itemPrice {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+}
+
+/* Transaction list */
+.transactionList {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.txnRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.txnRow:last-child { border-bottom: none; }
+
+.txnLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.txnBadge {
+  font-size: var(--text-base);
+  flex-shrink: 0;
+}
+
+.txnInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.txnDesc {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.txnDate {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.txnAmount {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+  margin-left: var(--space-3);
+}
+
+.txnAmountPurchase { color: var(--accent-danger); }
+.txnAmountPayment { color: var(--accent-success); }
+
+.emptyText {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-align: center;
+  padding: var(--space-6);
+}
+
+/* Quick actions */
+.quickActions {
+  position: sticky;
+  bottom: calc(var(--nav-height) + var(--safe-area-bottom) + var(--space-4));
+  padding: var(--space-4) 0;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--touch-target-lg);
+  padding: var(--space-3) var(--space-4);
+  background: var(--accent-primary);
+  color: white;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.actionButton:hover {
+  background: var(--accent-primary-hover);
+  color: white;
+}
+
+/* Delete button */
+.txnRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.deleteButton {
+  background: transparent;
+  border: none;
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+}
+
+.deleteButton:hover {
+  background: var(--accent-danger-light);
+}
+
+.deleteButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Supplier Actions */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.editSupplierButton {
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: background var(--transition-fast);
+}
+
+.editSupplierButton:hover {
+  background: var(--bg-card-hover);
+}
+
+.deleteSupplierButton {
+  padding: var(--space-2) var(--space-4);
+  background: var(--accent-danger-light);
+  color: var(--accent-danger);
+  border: 1px solid var(--accent-danger);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.deleteSupplierButton:hover:not(:disabled) {
+  background: var(--accent-danger);
+  color: white;
+}
+
+.deleteSupplierButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Item Actions */
+.itemActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: var(--space-3);
+  flex-shrink: 0;
+}
+
+.itemEditButton {
+  background: transparent;
+  border: none;
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+  text-decoration: none;
+}
+
+.itemEditButton:hover {
+  background: var(--bg-card-hover);
+}
+
+

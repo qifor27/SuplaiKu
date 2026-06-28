@@ -1,0 +1,47 @@
+.container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background-color: var(--border-color, #e5e7eb);
+  border-radius: 12px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.title {
+  height: 32px;
+  width: 40%;
+  margin-bottom: 0.5rem;
+}
+
+.card {
+  height: 140px;
+  width: 100%;
+}
+
+.sectionTitle {
+  height: 24px;
+  width: 30%;
+  margin-top: 1rem;
+}
+
+.row {
+  height: 64px;
+  width: 100%;
+  border-radius: 8px;
+}
