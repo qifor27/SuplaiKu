@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'suplaiKu — Manajemen Hutang Supplier',
+  title: 'suplaiKu — Manajemen Suplai',
   description:
     'Kelola hutang supplier toko Anda dengan mudah. Catat pembelian, pembayaran, dan pantau saldo hutang secara real-time.',
   manifest: '/manifest.json',

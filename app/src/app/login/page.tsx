@@ -149,7 +149,7 @@ export default function LoginPage() {
           <div className={styles.brandIcon}>📊</div>
           <h1 className={styles.brandTitle}>suplaiKu</h1>
           <p className={styles.brandSubtitle}>
-            Manajemen Hutang Supplier
+            Manajemen Suplai
           </p>
         </div>
 
